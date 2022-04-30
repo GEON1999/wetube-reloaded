@@ -1,0 +1,9 @@
+extends base
+include mixins/video
+
+block content 
+    h2 welcome here you will se the trending videos 
+
+    each object in videos 
+        +video(object)
+            

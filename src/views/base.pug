@@ -1,0 +1,10 @@
+doctype html
+html(lang="ko")
+    head
+        title #{pageName} | Wetube 
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+    body 
+        main
+            h1=pageName    
+            block content                
+    include partials/footer.pug
