@@ -11,8 +11,6 @@ html(lang="ko")
                     li 
                         a(href="/") Home    
                     li 
-                        a(href="/videos/upload") Upload Video
-                    li 
                         a(href="/search") Search    
                     if !loggedIn
                         li 
@@ -21,7 +19,11 @@ html(lang="ko")
                             a(href="/login") Login  
                     else 
                         li 
-                            a(href="logout") Logout     
+                            a(href="/user/edit-profile") Edit profile
+                        li 
+                            a(href="/videos/upload") Upload Video    
+                        li 
+                            a(href="/user/logout") Logout     
                         li  
                             a(href="/my-profile") #{loggedInUser.name}'s Profile                                       
         main  
