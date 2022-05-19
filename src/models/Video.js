@@ -2,13 +2,15 @@ import mongoose from "mongoose";
 
 const videoSchema = new mongoose.Schema({
     title: { type: String, required: true, trim: true },
+    fileUrl: { type: String, required: true},
     description: { type: String, required: true, trim: true },
-    createdAt: { type:Date, required: true, trim: true, default: Date.now },
+    createdAt: { type:Date, required: false, trim: true, default: Date.now },
     hashtags: [{ type: String, trim: true }],
     meta: {
-        views: { type: Number, defalut: 0, required: true },
-        rating: { type: Number, defalut: 0, required: true },
+        views: { type: Number, defalut: 0, required: false },
+        rating: { type: Number, defalut: 0, required: false },
     },
+    owner: {type: mongoose.Schema.Types.ObjectId, required: true, ref:"User"},
 });
 
 videoSchema.static("formatHashtags", function(hashtags) {

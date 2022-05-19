@@ -11,6 +11,8 @@ const app = express();
 const logger = morgan("dev");
 
 app.set("view engine", "pug");
+app.use("/uploads", express.static("uploads"));
+app.use("/assets", express.static("assets"));
 app.set("views", process.cwd() + "/src/views");
 app.use(logger);
 app.use(express.urlencoded({extended: true}));

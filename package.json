@@ -7,7 +7,8 @@
     "url": "git+https://github.com/GEON1999/wetube-reloaded.git"
   },
   "scripts": {
-    "dev": "nodemon --exec npx babel-node src/init.js"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack"
   },
   "keywords": [
     "videos"
@@ -26,6 +27,7 @@
     "express-session": "^1.17.2",
     "mongoose": "^6.3.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.4",
     "node-fetch": "^2.6.1",
     "pug": "^3.0.2"
   },
@@ -33,6 +35,14 @@
     "@babel/core": "^7.17.9",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
-    "nodemon": "^2.0.15"
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "nodemon": "^2.0.15",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
   }
 }
