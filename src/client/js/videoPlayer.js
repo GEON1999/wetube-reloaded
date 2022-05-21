@@ -1,5 +1,3 @@
-console.log("videoplayer")
-
 const video = document.querySelector("video");
 const playBtn = document.getElementById("play");
 const playBtnIcon = playBtn.querySelector("i");
@@ -120,16 +118,23 @@ const handleKeydown = (event) => {
     }  
 }
 
+const handleEnded = () => {
+    const { id } = videoContainer.dataset;
+    fetch(`/api/videos/${id}/view`, {
+        method: "post",
+    });
+}
 
 
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMute);
 volumeRange.addEventListener("input", handleVolumeChange);
+timeLine.addEventListener("input", handleTimeChange);
 video.addEventListener("loadedmetadata", handleLoadedMetaData);
 video.addEventListener("timeupdate", handleTimeUpdate);
-timeLine.addEventListener("input", handleTimeChange);
-fullScreenBtn.addEventListener("click", handleFullScreen);
+video.addEventListener("click", handlePlayClick);
+video.addEventListener("ended", handleEnded);
 videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
 document.addEventListener("keydown", handleKeydown);
-video.addEventListener("click", handlePlayClick);
+fullScreenBtn.addEventListener("click", handleFullScreen);

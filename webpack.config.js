@@ -4,7 +4,8 @@ const path = require("path");
 module.exports = {
     entry: {
         main: "./src/client/js/main.js",
-        videoPlayer: "./src/client/js/videoPlayer.js"
+        videoPlayer: "./src/client/js/videoPlayer.js",
+        recorder: "./src/client/js/recorder.js"
     },
     // code which i wnat to change shapes
     plugins: [new MiniCssExtractPlugin({
