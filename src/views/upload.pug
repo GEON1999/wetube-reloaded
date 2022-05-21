@@ -1,14 +1,17 @@
 extends base
 
 block content   
-    div     
-        video#preview
-        button#startBtn Start Recording
+    div.record__video
+        span#actionBtn.record__video__i
+            i.fas.fa-video
+        video#preview.record__video__preview
     if(errorMessage)
         span=errorMessage
     form(method="POST", enctype="multipart/form-data")
-        label(for="video") Video File 
+        label(for="video") Video File
         input(type="file", accept="video/*", required, id="video", name="video")
+        label(for="thumb") Thumnail File  
+        input(type="file", accept="image/*", id="thumb", name="thumb")
         input(placeholder="Title", required, type="text", name="title")
         input(placeholder="Discription", required, type="text", name="description")
         input(placeholder="Hashtags, separated by comma." required, type="text", name="hashtags")

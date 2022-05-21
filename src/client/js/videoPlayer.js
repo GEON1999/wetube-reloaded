@@ -20,7 +20,7 @@ let controlsMovementTimeout = null;
 let volumeValue = 0.5;
 video.volume = volumeValue;
 
- 
+video.play();
 
 const handlePlayClick = (e) => {
     if(video.paused){
@@ -138,3 +138,4 @@ videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
 document.addEventListener("keydown", handleKeydown);
 fullScreenBtn.addEventListener("click", handleFullScreen);
+document.addEventListener("")

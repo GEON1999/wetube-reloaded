@@ -5,7 +5,13 @@ header {
     align-items: center;
     .header__logo {
        color:$red;
-       font-size: 38px;
+       font-size: 35px;
+    }
+    .header__name{
+        margin-left: 3px;
+        color:$font;
+        font-size: 25px;
+        font-weight: 500;
     }
     ul{
         display: flex;
