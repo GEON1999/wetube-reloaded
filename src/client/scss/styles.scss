@@ -17,6 +17,8 @@
 @import "./screens/profile.scss";
 @import "./screens/edit-profile.scss";
 @import "./screens/upload.scss";
+@import "./screens/watch.scss";
+@import "./screens/comment.scss";
 
 
 a {
@@ -37,4 +39,35 @@ main {
     width: 100%;
     margin: 0 auto;
     margin-top: 50px ;
+}
+
+@keyframes goAway {
+    from {
+        opacity: 1;
+        transform: translateY();
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    
+}
+
+.message {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    max-width: 200px;
+    padding: 10px 20px;
+    border-radius: 10000px;
+    text-align: center;
+    animation: goAway .5s ease-in-out forwards;
+    animation-delay: 5s;
+ 
+    &.error {
+        background-color: tomato;
+        color: $font;
+    }
 }

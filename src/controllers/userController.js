@@ -218,7 +218,7 @@ export const see = async (req, res) => {
     return res.render("profile", {
         pageName : user.name,
         user,
-    });
+    });     
 }
 
 

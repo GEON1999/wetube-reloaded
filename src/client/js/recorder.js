@@ -83,6 +83,9 @@ const handleRecordStart = () => {
     actionBtn.removeEventListener("click", handleRecordStart);
     actionBtn.addEventListener("click", handleStop);
     recorder.start();
+    setTimeout(() => {
+        recorder.stop();
+      }, 60000);
 }
 
 const handleStart = () => {
@@ -108,7 +111,10 @@ const handleStart = () => {
 const init = async() => {
     stream =await navigator.mediaDevices.getUserMedia({
     audio: true,
-    video: true,
+    video: {
+        width: 1024,
+        height: 576,
+      },
  })
 
 
