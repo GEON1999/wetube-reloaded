@@ -14,9 +14,8 @@ module.exports = {
     plugins: [new MiniCssExtractPlugin({
         filename: "css/styles.css",
     })],
-    mode: "development", 
     // it shows us to the dev mode
-    watch: true,
+ 
     // it helps not to npm run assets all the time
     output: {
         filename: "js/[name].js",

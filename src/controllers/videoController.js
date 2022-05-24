@@ -15,7 +15,7 @@ export const watch = async (req, res) => {
     if(!video) {
         return res.render("404", {pageName: "Video not found."}); 
     }
-    console.log(video);
+//    console.log(video);
     return res.render("watch", {pageName: video.title, video});
 }
 
@@ -148,3 +148,28 @@ export const createCommnet = async(req, res) => {
     video.save();
     return res.status(201).json({ newCommentId: comment._id,});
 }
+
+export const deleteComment = async(req, res) => {
+    const {
+        session: {user},
+        body: {videoId},
+        params: {id},
+     } = req
+    const comment = await Comment.findById(id);
+    const commentUser = await User.findById(user._id);
+    const video = await Video.findById(videoId);
+
+    if(String(comment.owner._id) !== String(commentUser.id)) {
+        console.log("it's not ok")
+        return res.sendStatus(400)
+    }
+    await Comment.findByIdAndDelete(id);
+    return res.sendStatus(200)
+
+
+}
+
+
+
+
+// const response = await fetch(`/api/comments/${commentId}/delete`,
