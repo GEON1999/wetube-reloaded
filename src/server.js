@@ -13,10 +13,13 @@ const app = express();
 const logger = morgan("dev");
 
 app.use((req, res, next) => {
-    res.header("Cross-Origin-Embedder-Policy", "require-corp");
-    res.header("Cross-Origin-Opener-Policy", "same-origin");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+    );
     next();
-});
+    });
 
 app.set("view engine", "pug");
 app.use("/convert", express.static("node_modules/@ffmpeg/core/dist"))
