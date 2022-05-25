@@ -7,7 +7,7 @@ block content
             a(href="/user/edit-profile")
                 img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3MAdEhs1pDTSXdLl7RZn9t_WwnWNwsnt5ZA&usqp=CAU").avatar
         else    
-            img(src=`${user.avatarUrl}` crossorigin).avatar
+            img(src=`${user.avatarUrl}`).avatar
         h3=user.name
     div.video-grid
         each video in user.videos 
