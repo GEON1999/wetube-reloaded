@@ -37,7 +37,8 @@ export const publicOnlyMiddleware = (req, res, next) => {
 const multerUploader = multerS3({
     s3: s3,
     bucket: 'geontube',
-    acl: "public-read"
+    acl: "public-read",
+    contentType: multerS3.AUTO_CONTENT_TYPE,
 })
 
 export const avatarUpload = multer({
