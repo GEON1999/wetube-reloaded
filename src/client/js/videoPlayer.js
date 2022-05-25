@@ -139,3 +139,7 @@ videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
 document.addEventListener("keydown", handleKeydown);
 fullScreenBtn.addEventListener("click", handleFullScreen);
+
+if (vid.readyState >= 4) {
+    handleLoadedMetaData();
+  }

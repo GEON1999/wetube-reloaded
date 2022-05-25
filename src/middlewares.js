@@ -34,9 +34,16 @@ export const publicOnlyMiddleware = (req, res, next) => {
     }
 };
 
-const multerUploader = multerS3({
+const s3ImageUploader = multerS3({
     s3: s3,
-    bucket: 'geontube',
+    bucket: 'geontube/images',
+    acl: "public-read",
+    contentType: multerS3.AUTO_CONTENT_TYPE,
+})
+
+const s3VideoUploader = multerS3({
+    s3: s3,
+    bucket: 'geontube/videos',
     acl: "public-read",
     contentType: multerS3.AUTO_CONTENT_TYPE,
 })
@@ -46,12 +53,12 @@ export const avatarUpload = multer({
     limits: {
       fileSize: 10000000,
     },
-    storage: multerUploader,
+    storage: s3ImageUploader,
   });
   export const videoUpload = multer({
     dest: "uploads/videos/",
     limits: {
       fileSize: 500000000,
     },
-    storage: multerUploader,
+    storage: s3VideoUploader,
   });
