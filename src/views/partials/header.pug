@@ -22,7 +22,7 @@ header
                 li  
                      a(href=`/user/${loggedInUser._id}`)
                         if !loggedInUser.avatarUrl
-                            span 🤷‍♂️  
+                            img.header__avatar(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3MAdEhs1pDTSXdLl7RZn9t_WwnWNwsnt5ZA&usqp=CAU")  
                         else
                             if loggedInUser.socialOnly
                                 img.header__avatar(src=loggedInUser.avatarUrl) 
