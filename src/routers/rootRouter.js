@@ -12,3 +12,7 @@ rootRouter.route("/login").all(publicOnlyMiddleware).get(getLogin).post(postLogi
 rootRouter.get("/search", search);
 
 export default rootRouter;
+
+
+
+
