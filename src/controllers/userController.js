@@ -8,7 +8,7 @@ export const getJoin = (req, res) => {
     res.render("join", { pageName: "Join" })
 };
 export const postJoin = async(req, res) => {
-    const {name, username, email, password, password2, location} = req.body;
+    const {name, username, email, password, password2, location, description} = req.body;
     const pageName = "Join";
     if (password !== password2) {
         return res.status(400).render("join", {
@@ -38,6 +38,7 @@ export const postJoin = async(req, res) => {
             password,
             password2, 
             location,
+            description,
         });
         return res.redirect("/login");
     } catch (error) {
@@ -151,7 +152,7 @@ export const postEdit = async(req, res) => {
         session: {
             user: {_id, avatarUrl },
         },
-        body: { name, email, username, location },
+        body: { name, email, username, location, description },
         file,
     } = req;
     const updateUser = await User.findByIdAndUpdate(_id, {
@@ -160,6 +161,7 @@ export const postEdit = async(req, res) => {
         email,
         username,
         location,
+        description,
     },
     { new: true }
     );

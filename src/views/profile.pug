@@ -9,6 +9,7 @@ block content
         else    
             img(src=`${user.avatarUrl}`).avatar
         h3=user.name
+        h5=user.description
     div.video-grid
         each video in user.videos 
             +video(video)

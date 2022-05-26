@@ -4,3 +4,45 @@
 
     
 }
+
+.video__add__comments {
+    margin: 20px 0px;
+    form {
+        max-height: 70px;
+        height: 100%;
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: rgba($color: #7e70b1, $alpha: 0.5);
+        border-radius: 12px;
+        border: 1px solid rgba($color: $font, $alpha: 0.3);
+        button{
+            background-color: rgba($color: #a8a2bd, $alpha: 0.5);
+            background-image: none !important;
+            border-color: transparent;
+            border-radius: 5px;
+            border: none;
+            color: #FFFFFF;  
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        textarea{    
+            background-color: rgba($color: #a8a2bd, $alpha: 0.5);
+            border: solid 1px #FFFFFF;
+            border-radius: 5px;
+            width: 1000px;
+            height: 60px;
+    }
+
+}
+}
+
+.video__comment-form{
+    display: flex;
+}
+
+.deleteComment {
+    cursor: pointer;
+}
+

@@ -38,10 +38,10 @@ const addComment = (text, id) => {
     const videoComments = document.querySelector(".video__comments ul");
     const newComment = document.createElement("li");
     const span = document.createElement("span");
-    const spanDelete = document.createElement("span");
+    const spanDelete = document.createElement("i");
     span.innerText = text;
-    spanDelete.innerText = "X";
     spanDelete.className = "deleteComment"
+    spanDelete.classList.add("fas.fa-trash")
     // when the comment added, fake comment also get same class as real comment
     spanDelete.addEventListener("click", handleDelete)
     // the fake comment also get addEventListener. then, it's done!

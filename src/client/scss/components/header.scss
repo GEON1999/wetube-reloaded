@@ -5,12 +5,12 @@ header {
     align-items: center;
     .header__logo {
        color:$red;
-       font-size: 35px;
+       font-size: 30px;
     }
     .header__name{
         margin-left: 3px;
         color:$font;
-        font-size: 25px;
+        font-size: 23px;
         font-weight: 500;
     }
     ul{
@@ -33,9 +33,12 @@ header {
             padding: 5px 10px;
             border-radius: 5px;
     }
-    .header__avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-    }
+    
 }
+
+.header__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+

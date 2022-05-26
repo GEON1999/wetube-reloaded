@@ -2,7 +2,7 @@ extends base
 
 block content 
     form(method="post")
-        input(name="title", placeholder="NEW TITLE", value=video.title, required)
+        input(name="title", placeholder="NEW TITLE", value=video.title, required, maxlength="12")
         input(placeholder="Discription", required, type="text", name="description", value=video.description)
         input(placeholder="Hashtags, separated by comma." required, type="text", name="hashtags", value=video.hashtags.join())
         input(type="submit", value="save")

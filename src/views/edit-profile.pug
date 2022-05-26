@@ -8,6 +8,7 @@ block content
         input(placeholder="Email", name="email", type="email", required, value=loggedInUser.email)
         input(placeholder="Username", name="username", type="text", required, value=loggedInUser.username)
         input(placeholder="Location", name="location", type="text", value=loggedInUser.location)
+        input(placeholder="Description", name="description", type="text", value=loggedInUser.description)
         input(type="submit", value="Update Profile")
         if !loggedInUser.socialOnly
             div.edit-profile__password
