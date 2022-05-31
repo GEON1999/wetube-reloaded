@@ -3,7 +3,10 @@ mixin video(video)
         a(href=`/videos/${video.id}`).video-mixin     
             div.video-mixin__thumb(style=`background-image:url(${video.thumbUrl});background-size:cover;background-position:center;`)
             div.identifyUser
-                img.header__avatar(src=`${video.owner.avatarUrl}`)
+                if !video.owner.avatarUrl
+                   img.header__avatar(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3MAdEhs1pDTSXdLl7RZn9t_WwnWNwsnt5ZA&usqp=CAU")
+                else
+                    img.header__avatar(src=`${video.owner.avatarUrl}`)
                 div.video-mixin__data
                     span.video-mixin__title=video.title
                     div.video-mixin__meta

@@ -2,7 +2,18 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 40px;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .social__btn--github{
         background-color: rgba($color: #1f7733, $alpha: 0.7);
+        width: 260px;
+        height: 24px;
+        
     }
+}
+.kakao__Image {
+    margin-bottom: 20px;
+    width: 300px;
+    height: 48px;
 }

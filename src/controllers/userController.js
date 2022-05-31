@@ -2,6 +2,10 @@ import User from "../models/User";
 import Video from "../models/Video";
 import bcrypt from "bcrypt";
 import fetch from "node-fetch";
+import { async } from "regenerator-runtime";
+import { query } from "express";
+import { json } from "express/lib/response";
+import { qs } from "qs";
 
 
 export const getJoin = (req, res) => {
@@ -225,3 +229,79 @@ export const see = async (req, res) => {
 
 
 
+
+
+export const startKakao = (req, res) => {
+    const config = {
+        client_id :process.env.KA_CLIENT,
+        client_secret : process.env.KA_SECRET,
+        redirect_uri : process.env.KA_REDIRECT
+    }
+    
+    return res.redirect(`https://kauth.kakao.com/oauth/authorize?client_id=${config.client_id}&redirect_uri=${config.redirect_uri}&response_type=code`);
+} 
+
+export const finishKakao = async (req, res) => {
+    const config = {
+        client_id : process.env.KA_CLIENT,
+        client_secret : process.env.KA_SECRET,
+        redirect_uri : process.env.KA_REDIRECT
+    }
+
+    const bodyData = {
+        grant_type: "authorization_code",
+        client_id: config.client_id,
+        client_secret: config.client_secret,
+        redirect_uri: config.redirect_uri,
+        code: req.query.code
+    }
+    const queryStringBody = Object.keys(bodyData)
+    .map(k=> encodeURIComponent(k)+"="+encodeURI(bodyData[k]))
+    .join("&")
+
+    const requsetToken = await fetch("https://kauth.kakao.com/oauth/token", {
+        method: "POST",
+        headers:{
+            'content-type':'application/x-www-form-urlencoded'
+        },
+        body : queryStringBody
+    })
+    const kakaoToken = await requsetToken.json();
+    console.log(kakaoToken);
+    if(!kakaoToken.access_token) {
+        return res.redirect("/login");
+    }
+
+    const seeToken = await fetch("https://kapi.kakao.com/v2/user/me", {
+        method: "POST",
+        headers:{
+            'Content-Type': 'application/x-www-form-urlencoded',
+            Authorization: `bearer ${kakaoToken.access_token}`
+        },      
+    })
+
+    const tokenUse = await seeToken.json();
+    console.log(tokenUse);
+
+    let user = await User.findOne({email: tokenUse.kakao_account.email});
+    if(!tokenUse.kakao_account.email) {
+        req.flash("error", "Email access required")
+        return res.redirect("/login");
+    } else {
+        if(!user) {
+            user= await User.create({
+                avatarUrl: tokenUse.properties.profile_image,
+                name: tokenUse.properties.nickname,
+                username: tokenUse.properties.nickname,
+                email: tokenUse.kakao_account.email,
+                password: "",
+                socialOnly: true,
+                location: ""
+            })
+        }
+        req.session.loggedIn = true;
+        req.session.user = user;
+        return res.redirect("/");
+    }
+       
+}

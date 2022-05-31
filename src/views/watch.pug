@@ -38,7 +38,10 @@ block content
                     a(href=`${video.id}/delete`) Delete
     div.video__more 
         div.video__more__user           
-            img.header__avatar(src=`${video.owner.avatarUrl}`)
+            if !video.owner.avatarUrl
+                img.header__avatar(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3MAdEhs1pDTSXdLl7RZn9t_WwnWNwsnt5ZA&usqp=CAU")
+            else
+                img.header__avatar(src=`${video.owner.avatarUrl}`)
             div.video__more__user__info   
                 p=video.owner.name
                 small=video.owner.description

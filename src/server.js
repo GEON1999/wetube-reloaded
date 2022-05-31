@@ -25,16 +25,11 @@ app.set("view engine", "pug");
 app.use("/convert", express.static("node_modules/@ffmpeg/core/dist"))
 app.use("/uploads", express.static("uploads"));
 app.use("/assets", express.static("assets"));
+app.use("/image", express.static('image'));
 app.set("views", process.cwd() + "/src/views");
 app.use(logger);
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-//Express에 내장된 미들웨어 기능입니다.
-//body-parser를 기반으로 request payload로 전달한 JSON을 파싱합니다.
-//문자열을 받아서 json으로 바꿔줍니다.
-//주의할 점은 express.json()은 header에 Content-Type이 express.json()의 기본 값인 "application/json"과 일치하는 request만 보는 미들웨어를 반환합니다.
-//다시 말해, headers: { "Content-type": "application/json" }인 request만 express.json()을 실행한다.
-
 
 app.use(
     session ({
