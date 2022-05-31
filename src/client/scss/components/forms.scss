@@ -40,8 +40,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 3px;
 }
 
-input[type="submit"],
-.social__btn {
+input[type="submit"],.social__btn--github {
     border-radius: 5px;
     padding: 12px 20px;
     background-color: rgba($color: #542edf, $alpha: 0.7);
