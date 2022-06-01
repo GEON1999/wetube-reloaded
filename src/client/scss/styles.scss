@@ -5,7 +5,6 @@
 //components
 @import "./components/header.scss";
 @import "./components/footer.scss";
-@import "./components/video.scss";
 @import "./components/shared.scss";
 @import "./components/forms.scss";
 @import "./components/social-login.scss";
@@ -32,7 +31,7 @@ body {
     height: 150vh;
     font-family: 'Cinzel', serif;
     //background-color: wheat;
-    background-image: url(../img/Superman-100-Vertices.jpeg);
+    background-image: url(../img/50-Shades-of-Grey-200-Vertices.jpeg);
     background-repeat : no-repeat;
     background-size : cover;
     background-position: center;

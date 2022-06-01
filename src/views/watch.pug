@@ -59,7 +59,7 @@ block content
                         li.comment(data-id=comment.id)
                             span.click=comment.text
                             if String(loggedInUser._id) === String(comment.owner._id)
-                                span.deleteComment X
+                                i.fas.fa-trash.deleteComment
                                 
 
 block scripts

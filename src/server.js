@@ -25,7 +25,7 @@ app.set("view engine", "pug");
 app.use("/convert", express.static("node_modules/@ffmpeg/core/dist"))
 app.use("/uploads", express.static("uploads"));
 app.use("/assets", express.static("assets"));
-app.use("/image", express.static('image'));
+//app.use("/image", express.static('image'));
 app.set("views", process.cwd() + "/src/views");
 app.use(logger);
 app.use(express.urlencoded({extended: true}));

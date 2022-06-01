@@ -165,11 +165,19 @@ export const deleteComment = async(req, res) => {
     }
     await Comment.findByIdAndDelete(id);
     return res.sendStatus(200)
-
-
 }
 
+let videos = []
 
+videos.push(Video.find({}))                   
 
+/*
+let videoGroup1 = [];
+let videoGroup2 = [];
+let videoGroup3 = [];
+let videoGroup4 = [];
+let videoGroup5 = [];
 
-// const response = await fetch(`/api/comments/${commentId}/delete`,
+videoGroup1.push(videos[1]);
+console.log(videoGroup1);
+*/
