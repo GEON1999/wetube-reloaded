@@ -23,6 +23,22 @@ input:not([type="range"]){
     }
 }
 
+
+input[type="submit"],.social__btn--github, .kakaoLogin {
+    border-radius: 12px;
+    padding: 12px 20px;
+    background-color: rgba($color: #b91717, $alpha: 0.7);
+    text-align: center;
+    cursor: pointer;
+    display: block;
+}
+
+label {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+//video range
 input[type=range] { 
     -webkit-appearance: none;
     width:100%;
@@ -40,16 +56,11 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 3px;
 }
 
-input[type="submit"],.social__btn--github, .kakaoLogin {
-    border-radius: 12px;
-    padding: 12px 20px;
-    background-color: rgba($color: #b91717, $alpha: 0.7);
-    text-align: center;
-    cursor: pointer;
-    display: block;
+input[type=submit]:hover, button[type=submit]:hover, span[type=submit]:hover, i[type=submit]:hover, a[type=submit]:hover{
+    opacity: 0.6;
 }
 
-label {
-    font-size: 12px;
-    opacity: 0.7;
+a[type=submit]:hover {
+    opacity: 0.5;
 }
+

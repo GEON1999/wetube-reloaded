@@ -167,11 +167,14 @@ export const deleteComment = async(req, res) => {
     return res.sendStatus(200)
 }
 
+/*
 let videos = []
 
 videos.push(Video.find({}))                   
 
-/*
+console.log(videos);
+
+
 let videoGroup1 = [];
 let videoGroup2 = [];
 let videoGroup3 = [];
@@ -179,5 +182,4 @@ let videoGroup4 = [];
 let videoGroup5 = [];
 
 videoGroup1.push(videos[1]);
-console.log(videoGroup1);
 */

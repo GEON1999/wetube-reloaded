@@ -14,6 +14,9 @@
             margin-right: 30px;
         }
     }
+    .social__btn--github:hover{
+        opacity: 0.6;
+    }
     .kakaoLogin{
         background-color: #FEE500;
         width: 260px;
@@ -25,6 +28,9 @@
         margin-right: 50px;
         color: #000000;
     }
+}
+.kakaoLogin:hover{
+    opacity: 0.6;
 }
 }
 .kakao__Image {
