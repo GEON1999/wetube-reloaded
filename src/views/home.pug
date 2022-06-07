@@ -2,11 +2,23 @@ extends base
 include mixins/video
 
 block content 
-    div.video-box
-        each video in videos 
-            +video(video)
-        else 
-            span.empty__message No videos found
+    div.home-container
+        div.home_description
+            h1 experience fresh & new
+            div 
+                h2 video
+                h3  for free
+                h4.point comment
+                h5.point upload 
+                h6.point search
+            p to suport this website plase upload your own video. we don't care whatever it is.
+            p you can also share some videos from other website, incase you wire the source.
+            p if you want you could record video by this aewsome website.
+        div.video-box
+            each video in videos 
+                +video(video)
+            else 
+                span.empty__message No videos found
 
 
 
