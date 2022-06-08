@@ -1,42 +1,47 @@
 .home-container{
-    width: 100%;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
     .home_description{
-        width: 100%;
-        margin-right: 900px;
+
+        margin-right: 1000px;
         margin-bottom: -35px;
         margin-top: -50px;
         h1{
+            animation: fadeinDescription 3s;
             font-weight: 500;
-            font-size: 80px;
+            font-size: 70px;
         }
         div{
             display: flex;
     
             h2{
+                animation: fadeinDescription 2s;
                 font-weight: 700;
                 font-size: 150px;
             }
             h3{
+                animation: fadeinDescription 2s;
                 width: 120px;
                 margin-left: 30px;
                 margin-top: 20px;
                 font-weight: 300;
                 font-size: 50px;
-                margin-right: 80px;
+                margin-right: 50px;
             }
             .point {
-                margin-top: 35px;
+                animation: fadeinDescription 2s;
+                margin-top: 40px;
                 transform: rotate(315deg);
                 font-weight: 500;
-                font-size: 25px;
+                font-size: 20px;
             }
         }
         p {
+            animation: fadeinDescription 1s;
             opacity: 0.7;
         }
     }
@@ -109,13 +114,16 @@
 .video-box{
     .video__each:nth-child(13) {
         transform: rotate(315deg);
+        left: 0%;
         position: absolute;
+        animation: fadein 6.5s;
         margin-bottom: -420px;
         z-index: 13;
     }  
     .video__each:nth-child(11) {
         transform: rotate(322deg);
         position: absolute;
+        animation: fadein 6.5s;
         margin-bottom: -270px;
         left: 8%;
         z-index: 12;
@@ -124,6 +132,7 @@
     .video__each:nth-child(9) {
         transform: rotate(329deg);
         position: absolute;
+        animation: fadein 6s;
         margin-bottom: -135px;
         left: 16%;
         z-index: 11;
@@ -132,6 +141,7 @@
     .video__each:nth-child(7) {
         transform: rotate(336deg);
         position: absolute;
+        animation: fadein 5.5s;
         margin-bottom: -50px;
         left: 24%;
         z-index: 10;
@@ -140,6 +150,7 @@
     .video__each:nth-child(5) {
         transform: rotate(343deg);
         position: absolute;
+        animation: fadein 5s;
         margin-bottom: 20px;
         left: 32%;
         z-index: 9;
@@ -148,6 +159,7 @@
     .video__each:nth-child(3) {
         transform: rotate(350deg);
         position: absolute;
+        animation: fadein 4.5s;
         margin-bottom: 60px;
         left: 40%;
         z-index: 8;
@@ -156,6 +168,7 @@
     .video__each:nth-child(1) {
         transform: rotate(357deg);
         position: absolute;
+        animation: fadein 4s;
         left: 48%;
         z-index: 7;
         margin-bottom: 70px;
@@ -164,6 +177,7 @@
     .video__each:nth-child(2) {
         transform: rotate(4deg);
         position: absolute;
+        animation: fadein 3.5s;
         margin-bottom: 60px;
         left: 56%;
         z-index: 6;
@@ -171,6 +185,7 @@
     .video__each:nth-child(4) {
         transform: rotate(11deg);
         position: absolute;
+        animation: fadein 3s;
         margin-bottom: 30px;
         left: 64%;
         z-index: 5;
@@ -178,6 +193,7 @@
     .video__each:nth-child(6) {
         transform: rotate(18deg);
         position: absolute;
+        animation: fadein 2.5s;
         margin-bottom: -25px;
         left: 72%;
         z-index: 4;
@@ -185,6 +201,7 @@
     .video__each:nth-child(8) {
         transform: rotate(25deg);
         position: absolute;
+        animation: fadein 2s;
         margin-bottom: -100px;
         left: 80%;
         z-index: 3;
@@ -192,6 +209,7 @@
     .video__each:nth-child(10) {
         transform: rotate(32deg);
         position: absolute;
+        animation: fadein 1.5s;
         margin-bottom: -200px;
         left: 88%;
         z-index: 2;
@@ -199,6 +217,7 @@
     .video__each:nth-child(12) {
         transform: rotate(39deg);
         position: absolute;
+        animation: fadein 1s;
         margin-bottom: -325px;
         left: 96%;
         z-index: 1;
@@ -207,7 +226,21 @@
 
 
 
+@keyframes fadein {
+    from {
+        left: -50%;
+        
+    }
+    to {
+        
+    }
+}
 
+@keyframes fadeinDescription {
+    from {
+        transform: translatey(-50px);
+    }
+}
 
 
 
@@ -226,11 +259,8 @@
 */
 
 /*
-.video-grid {
-    display: grid;
-    gap: 50px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
+
+
 */
 
 
