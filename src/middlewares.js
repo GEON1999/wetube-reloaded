@@ -62,3 +62,4 @@ export const avatarUpload = multer({
     },
     storage: s3VideoUploader,
   });
+

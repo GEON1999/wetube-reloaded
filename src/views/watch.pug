@@ -48,11 +48,15 @@ block content
         div
             p.video__discription=video.description       
 
-        if loggedIn
+        
             div.video__add__comments
                 form.video__comment-form#commentForm
+                    
                     textarea#textarea(cols="55",rows="10",placeholder="Add a comment...", )
-                    button.comment__button COMMENT
+                    if loggedIn
+                        button.comment__button COMMENT
+                    else 
+                        p you should login to leave a comment.
             div.video__comments 
                 ul 
                     each comment in video.comments.reverse() 
