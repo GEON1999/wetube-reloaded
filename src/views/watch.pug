@@ -39,9 +39,11 @@ block content
     div.video__more 
         div.video__more__user           
             if !video.owner.avatarUrl
-                img.header__avatar(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3MAdEhs1pDTSXdLl7RZn9t_WwnWNwsnt5ZA&usqp=CAU")
+                a(href=`/user/${video.owner._id}`)
+                    img.header__avatar(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3MAdEhs1pDTSXdLl7RZn9t_WwnWNwsnt5ZA&usqp=CAU")
             else
-                img.header__avatar(src=`${video.owner.avatarUrl}`)
+                a(href=`/user/${video.owner._id}`)
+                    img.header__avatar(src=`${video.owner.avatarUrl}`)
             div.video__more__user__info   
                 p=video.owner.name
                 small=video.owner.description
@@ -50,8 +52,7 @@ block content
 
         
             div.video__add__comments
-                form.video__comment-form#commentForm
-                    
+                form.video__comment-form#commentForm               
                     textarea#textarea(cols="55",rows="10",placeholder="Add a comment...", )
                     if loggedIn
                         button.comment__button COMMENT
