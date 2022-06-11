@@ -13,8 +13,6 @@ const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
 const textarea = document.getElementById("textarea")
 
-video.play();
-
 let keyDownId = null;
 
 let controlsTimeout = null;

@@ -8,12 +8,13 @@ block content
             div 
                 h2 video
                 h3  for free
-                h4.point comment
-                h5.point upload 
-                h6.point search
-            p to suport this website plase upload your own video. we don't care whatever it is.
-            p you can also share some videos from other website, incase you wire the source.
-            p if you want you could record video by this aewsome website.
+                a(href="/user/edit-profile")
+                    h6.point add info 
+                a(href="/videos/upload")
+                    h5.point upload     
+                a(href="/join")
+                    h4.point sign in
+
         div.video-box
             each video in videos 
                 +video(video)
