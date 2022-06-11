@@ -12,6 +12,7 @@ const fullScreenBtnIcon = fullScreenBtn.querySelector("i");
 const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
 const textarea = document.getElementById("textarea")
+const keydownGuid = document.querySelector(".keydownGuid")
 
 let keyDownId = null;
 
@@ -81,9 +82,11 @@ const handleFullScreen = () => {
     const fullscreen = document.fullscreenElement;
     if(fullscreen) {
         document.exitFullscreen();
+        keydownGuid.style.visibility = 'visible';
         fullScreenBtnIcon.classList = "fas fa-expand";
     } else {
         videoContainer.requestFullscreen();
+        keydownGuid.style.visibility = 'hidden';
         fullScreenBtnIcon.classList = "fas fa-compress";
     }
 }
