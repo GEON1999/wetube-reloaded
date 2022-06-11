@@ -53,7 +53,7 @@ block content
         
             div.video__add__comments
                 form.video__comment-form#commentForm               
-                    textarea#textarea(cols="55",rows="10",placeholder="Add a comment...", )
+                    textarea#textarea(cols="55",rows="10",placeholder="Add a comment...",maxlength="75")
                     if loggedIn
                         button.comment__button COMMENT
                     else 
@@ -61,13 +61,21 @@ block content
             div.video__comments 
                 ul 
                     each comment in video.comments.reverse() 
-                        li.comment(data-id=comment.id)
-                            span.click=comment.text
+                        li.comment(data-id=comment.id)                     
+                            img.header__avatar(src=comment.avatarUrl)
+                            div.comment_text
+                                div.comment_text_user
+                                    small #{comment.ownerName}  
+                                    p #{new Date(comment.createdAt).toLocaleDateString()}
+                                span.click=comment.text
                             if String(loggedInUser._id) === String(comment.owner._id)
-                                i.fas.fa-trash.deleteComment
+                                    i.fas.fa-trash.deleteComment
+                                
                                 
 
 block scripts
     script(src="/assets/js/videoPlayer.js")
     if loggedIn
         script(src="/assets/js/commentSection.js")
+
+

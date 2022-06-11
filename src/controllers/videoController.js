@@ -15,6 +15,7 @@ export const watch = async (req, res) => {
     if(!video) {
         return res.render("404", {pageName: "Video not found."}); 
     }
+    const comeent = await Comment.findById
 //    console.log(video);
     return res.render("watch", {pageName: video.title, video});
 }
@@ -129,24 +130,31 @@ export const registerView = async(req, res) => {
 
 export const createCommnet = async(req, res) => {
    const {
-       session: {user},
+        session: {
+            user: {_id}
+        },
        body: {text},
        params: {id},
     } = req
     
     const video = await Video.findById(id);
+    const user = await User.findById(_id);
     if(!video) {
         return res.sendStatus(404);
     };
 
     const comment = await Comment.create({
         text,
-        owner: user._id,
+        owner: user,
         video: id,
+        avatarUrl: user.avatarUrl,
+        ownerName: user.name
     });
     video.comments.push(comment._id);
     video.save();
-    return res.status(201).json({ newCommentId: comment._id,});
+    user.comments.push(comment._id);
+    user.save();
+    return res.status(201).json({ newComment: comment });
 }
 
 export const deleteComment = async(req, res) => {
@@ -166,6 +174,7 @@ export const deleteComment = async(req, res) => {
     await Comment.findByIdAndDelete(id);
     return res.sendStatus(200)
 }
+
 
 /*
 let videos = []

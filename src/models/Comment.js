@@ -6,6 +6,8 @@ const commentSchema = new mongoose.Schema({
     // who wrote a comment
     video: {type: mongoose.Schema.Types.ObjectId, required: true, ref:"Video"},
     // what video has a comment
+    avatarUrl: String,
+    ownerName: String,
     createdAt: { type: Date, required: true, default: Date.now },
 })
 
