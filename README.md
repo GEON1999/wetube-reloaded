@@ -13,8 +13,11 @@
 <br />
 
  #### 1. 홈
-
-
+- 유저가 업로드 한 영상을 카드 형식으로 펼쳐지게 연출함
+  - 영상을 `grid` 로 나열시 많은 영상들을 home 화면에 노출시킬 수 있지만, 인입되는 유저가 적고 영상의 개수가 적기에 이와 같이 연출함
+- 노출된 영상들을 `hover` 시 카드가 올라감
+- `hover` 된 카드들은 간단한 정보를 추가로 노출함
+- 상단에 `nav` 에는 `search, login, join, home` 버튼을 추가함
  <div align="center">
   <img height="800" src="./preview/1.gif" />
  </div>
@@ -26,7 +29,6 @@
 <br />
 
  #### 2. 소셜 로그인
-
  <div align="center">
   <img height="800" src="./preview/2.gif" />
  </div>
