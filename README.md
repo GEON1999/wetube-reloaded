@@ -32,6 +32,7 @@
  1. 서버에서 소셜 서버에 `인가코드` 를 요청 (get method)
  2. 소셜 서버에서 유저에게 로그인을 요청 
  3. 유저 로그인시 인가코드를 통해 `토큰` 을 발급하고 post 로 유저 정보를 서버에 생성함
+ 4. 서버에 유저 정보를 생성하면 유저의 카카오톡 프로필 사진등이 있을 경우 자동 프로필 사진으로 설정(유저 정보는 별도 수정 가능)
  <div align="center">
   <img height="800" src="./preview/2.gif" />
  </div>
@@ -44,7 +45,7 @@
 
     
 </br>
- 임이 확인되면 만들어진 채팅룸으로 이동(data 안의 chatRoomId 를 통해 경로 설정) 
+
  
   <div align="center">
   <img height="800" src="./preview/3.gif" />
