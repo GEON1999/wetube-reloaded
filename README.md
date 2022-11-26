@@ -57,7 +57,7 @@
 <br />
 
 #### 4. 비디오 검색
-
+- 비디오 제목에 검색어가 포함되어 있으면 노출되도록 
   
  <div align="center">
   <img height="800" src="./preview/4.gif" />
