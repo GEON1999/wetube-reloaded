@@ -84,13 +84,14 @@
 
 > Front-end
 - Scss
--  <img height="35"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8UQX-1Y_81WiPAtsQMqhbxdvjic48gWCzqg&usqp=CAU" />Pug
+- Pug
 
 <br />
 
 > Back-end
 - MongoDB
 - Javascript
+- Node.js
 
 <br />
 
